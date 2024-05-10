@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var availabilityDiv = document.querySelector(".availability");
       availabilityDiv.classList.replace("offline", "online");
       availabilityDiv.innerHTML =
-        '<img src="icons/time.svg" />Currently Available<div class="agent-status"></div>';
+        '<img src="icons/time.svg" />Available Now<div class="agent-status"></div>';
     }, 3000);
   }
 
