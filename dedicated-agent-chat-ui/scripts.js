@@ -50,28 +50,43 @@ document.addEventListener("DOMContentLoaded", function () {
     autoGrowingTextarea(); // Initial resize if there's any text already
   }
 
-  // For demo purposes only, switch the offline agent status to online after 3 seconds.
-  // TODO: In production, update according to the relevant server timezone and working hours.
-  function replaceStatus() {
-    setTimeout(function () {
-      var availabilityDiv = document.querySelector(".availability");
-      availabilityDiv.classList.replace("offline", "online");
-      availabilityDiv.innerHTML =
-        '<img src="icons/time.svg" />Available Now<div class="agent-status"></div>';
-    }, 3000);
-  }
+  // Update the agent's status according to business hours.
+  // TODO: Re-check that it works with winter/summer time adjustments.
+  function updateAgentStatus() {
+    // Get current time in UTC
+    const nowUTC = Date.now();
+    const today = new Date();
+    const year = today.getUTCFullYear();
+    const month = today.getUTCMonth();
+    const day = today.getUTCDate();
 
-  function createOfflineStatus() {
+    // Convert business hours in UTC
+    const startHour = 9;
+    const endHour = 17;
+    const offset = 3;
+    const startUTC = Date.UTC(year, month, day, startHour - offset, 0, 0);
+    const endUTC = Date.UTC(year, month, day, endHour - offset, 0, 0);
+
+    // Cache agentAvailability element selection
     var agentAvailability = document.getElementById("agentAvailability");
+
+    // Create offline div
     var offlineDiv = document.createElement("div");
     offlineDiv.classList.add("availability", "offline");
-    offlineDiv.innerHTML =
-      '<img src="icons/time.svg" />Available: 9:00—17:00 (Paris)<div class="agent-status"></div>';
+    offlineDiv.innerHTML = `<img src="icons/time.svg" />Available: ${startHour}:00—${endHour}:00 (Paris)<div class="agent-status"></div>`;
+
+    // Check if current time is within business hours
+    if (nowUTC >= startUTC && nowUTC <= endUTC) {
+      offlineDiv.classList.replace("offline", "online");
+      offlineDiv.innerHTML =
+        '<img src="icons/time.svg" />Available Now<div class="agent-status"></div>';
+    }
+
+    // Append offlineDiv to agentAvailability
     agentAvailability.appendChild(offlineDiv);
   }
 
-  createOfflineStatus();
-  replaceStatus(); // TODO: In production, check against the relevant server timezone and working hours
+  updateAgentStatus();
   scrollToLatestMessage();
   checkTextareaEmpty(); // Initial check to see if the textarea is empty
 });
