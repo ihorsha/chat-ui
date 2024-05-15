@@ -300,7 +300,7 @@ table {
   display: flex;
   background: #ffffff;
   border: 1px solid #aaaaaa;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .footer .footer-inner .file-upload,
 .footer .footer-inner .new-message,
@@ -323,7 +323,7 @@ table {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding-left: 8px;
+  padding-left: 12px;
 }
 .footer .footer-inner .file-upload label img {
   width: 18px;
@@ -373,7 +373,7 @@ table {
   height: 32px;
   background: #0054dc;
   border: 0;
-  border-radius: 8px;
+  border-radius: 30px;
   cursor: pointer;
   transition: all 0.05s ease-in-out;
 }

@@ -73,13 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Create offline div
     var offlineDiv = document.createElement("div");
     offlineDiv.classList.add("availability", "offline");
-    offlineDiv.innerHTML = `<img src="icons/time.svg" />Available: ${startHour}:00—${endHour}:00 (Paris)<div class="agent-status"></div>`;
+    offlineDiv.innerHTML = `<img src="../icons/time.svg" />Available: ${startHour}:00—${endHour}:00 (Paris)<div class="agent-status"></div>`;
 
     // Check if current time is within business hours
     if (nowUTC >= startUTC && nowUTC <= endUTC) {
       offlineDiv.classList.replace("offline", "online");
       offlineDiv.innerHTML =
-        '<img src="icons/time.svg" />Available Now<div class="agent-status"></div>';
+        '<img src="../icons/time.svg" />Available Now<div class="agent-status"></div>';
     }
 
     // Append offlineDiv to agentAvailability
