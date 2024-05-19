@@ -190,10 +190,10 @@ table {
 }
 .heading .heading-inner .info .availability.online {
   font-weight: bold;
-  color: rgb(0, 162, 78);
+  color: #00a24e;
 }
 .heading .heading-inner .info .availability.online .agent-status {
-  background: rgb(0, 162, 78);
+  background: #00a24e;
 }
 .heading .heading-inner .info .availability.offline .agent-status {
   background: orange;
@@ -220,38 +220,118 @@ table {
   width: 100%;
   flex-direction: column;
 }
+.conversation .conversation-inner .messages .message.multi-agent {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+.conversation .conversation-inner .message.multi-agent .sender {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 0 6px 14px;
+}
+.conversation .conversation-inner .message.multi-agent .photo {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin-right: 10px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(243, 132, 243) 30%,
+    rgb(208, 109, 208)
+  );
+  border-radius: 100%;
+}
+.conversation .conversation-inner .message.multi-agent {
+  padding: 18px 0;
+}
 .conversation .conversation-inner .message {
   padding: 6px 0;
 }
-.conversation .conversation-inner .message .message-inner {
+.conversation .conversation-inner .message .message-container {
   display: inline-block;
 }
-.conversation .conversation-inner .message .message-inner .text {
+.conversation .conversation-inner .message .message-container .text {
   position: relative;
   line-height: 1.4;
-  padding: 8px 10px;
+  padding: 10px 14px;
   background: #f2f2f2;
-  border-radius: 10px;
+  border-radius: 16px;
+  cursor: pointer;
 }
-.conversation .conversation-inner .message .message-inner .text .timestamp {
+.conversation .conversation-inner .message .message-container .details {
+  display: flex;
   font-size: 14px;
-  text-align: right;
-  padding-top: 2px;
-  opacity: 0.5;
+  padding: 6px 0 0 14px;
+  color: #555555;
 }
-.conversation .conversation-inner .message.outgoing .message-inner {
+.conversation
+  .conversation-inner
+  .message
+  .message-container
+  .details
+  .copy-text {
+  display: flex;
+  margin-left: 12px;
+  cursor: pointer;
+}
+.conversation
+  .conversation-inner
+  .message
+  .message-container
+  .details
+  .copy-label {
+  margin-left: 4px;
+}
+.conversation
+  .conversation-inner
+  .message
+  .message-container
+  .details
+  .copy-label.copied {
+  font-weight: bold;
+  color: #00a24e;
+}
+.conversation
+  .conversation-inner
+  .message
+  .message-container
+  .details
+  .copy-text
+  img {
+  width: 14px;
+  height: 14px;
+}
+.conversation .conversation-inner .message.outgoing .message-container {
   float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
-.conversation .conversation-inner .message.outgoing .message-inner .text {
-  position: relative;
+.conversation
+  .conversation-inner
+  .message.outgoing
+  .message-container
+  .message-inner {
+  display: flex;
+  justify-content: end;
+}
+.conversation .conversation-inner .message.outgoing .message-container .text {
   max-width: calc(100% - 48px);
-  float: right;
   color: #ffffff;
-  background: #0271e3;
+  background: #4b60fa;
 }
-.conversation .conversation-inner .message.outgoing .message-inner .timestamp {
-  color: #ffffff;
-  opacity: 0.6;
+.conversation
+  .conversation-inner
+  .message.outgoing
+  .message-container
+  .details {
+  text-align: right;
+  padding: 6px 14px 0 0;
 }
 
 .footer {
@@ -261,6 +341,27 @@ table {
   bottom: 0;
   left: 0px;
   padding: 0 12px 8px 12px;
+}
+.footer button.scroll-to-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-top: -26px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.05s ease-in-out;
+}
+.footer button.scroll-to-bottom img {
+  width: 14px;
+  height: 14px;
 }
 .footer .fade {
   z-index: -1;
@@ -371,7 +472,7 @@ table {
   justify-content: center;
   width: 32px;
   height: 32px;
-  background: #0054dc;
+  background: #0057ff;
   border: 0;
   border-radius: 30px;
   cursor: pointer;
@@ -387,7 +488,11 @@ table {
 }
 
 @media screen and (min-width: 640px) {
+  .footer .scroll-to-bottom:not([disabled]):hover {
+    border-color: #c4e0fd;
+    background: #c4e0fd;
+  }
   .footer .footer-inner .send-message button:not([disabled]):hover {
-    background: #004fce;
+    background: #013db3;
   }
 }

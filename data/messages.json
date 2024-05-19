@@ -1,0 +1,57 @@
+[
+  {
+    "sender": "Bot",
+    "text": "Hello! How are you feeling today?",
+    "timestamp": "2024-05-08T11:13:00Z",
+    "color": "rgb(68, 184, 255) 30%, rgb(41, 116, 255)"
+  },
+  {
+    "text": "Hello! Thank you, I'm fine. Just a bit worried about my sugar levels.",
+    "timestamp": "2024-05-08T11:14:00Z",
+    "outgoing": true
+  },
+  {
+    "sender": "Bot",
+    "text": "I see. What have your sugar levels been like in the past few days?",
+    "timestamp": "2024-05-08T11:14:16Z",
+    "color": "rgb(68, 184, 255) 30%, rgb(41, 116, 255)"
+  },
+  {
+    "text": "They usually fluctuate. Sometimes high, sometimes low.",
+    "timestamp": "2024-05-08T11:14:17Z",
+    "outgoing": true
+  },
+  {
+    "sender": "Bot",
+    "text": "It's important to keep an eye on these fluctuations. How do you manage your sugar?",
+    "timestamp": "2024-05-08T11:14:19Z",
+    "color": "rgb(68, 184, 255) 30%, rgb(41, 116, 255)"
+  },
+  {
+    "text": "I try to stick to a diet and exercise. But still, sometimes there are spikes.",
+    "timestamp": "2024-05-08T11:14:20Z",
+    "outgoing": true
+  },
+  {
+    "sender": "Lila Whitmore",
+    "text": "I understand. Maybe it's worth paying attention to what you eat and when you take insulin?",
+    "timestamp": "2024-05-08T11:14:21Z",
+    "color": "rgb(203, 140, 255) 30%, rgb(171, 111, 255)"
+  },
+  {
+    "text": "Maybe. It's not always easy to get the balance right.",
+    "timestamp": "2024-05-08T11:14:22Z",
+    "outgoing": true
+  },
+  {
+    "sender": "Lila Whitmore",
+    "text": "Don't worry, we can discuss your diet and consider optimal times for taking insulin. It's also important to consider your lifestyle.",
+    "timestamp": "2024-05-17T09:55:16Z",
+    "color": "rgb(203, 140, 255) 30%, rgb(171, 111, 255)"
+  },
+  {
+    "text": "Thank you! I'm glad to have support.",
+    "timestamp": "2024-05-18T09:56:16Z",
+    "outgoing": true
+  }
+]
